@@ -214,9 +214,9 @@ const SuvRentalSection = () => {
             className="text-base md:text-sm text-gray-400 leading-relaxed"
           >
             SUV car rental in Dubai is the best choice for people who love
-            luxury with space. If you're travelling with your family or group of
+            luxury with space. If you&apos;re travelling with your family or group of
             friends, then the SUV rental in Dubai is the perfect choice for you.
-            If you're going for a long ride or family vacation or a business
+            If you&apos;re going for a long ride or family vacation or a business
             trip, an SUV for rent in Dubai brings versatility and comfort.
           </motion.p>
 
@@ -241,7 +241,7 @@ const SuvRentalSection = () => {
             BE VIP have top luxury SUV models to economy options, which makes
             the client choose as per their preference and budget. So, book your
             SUV for rent in Dubai today for an unforgettable adventure on
-            Dubai's vibrant streets!
+            Dubai&apos;s vibrant streets!
           </motion.p>
         </div>
 
