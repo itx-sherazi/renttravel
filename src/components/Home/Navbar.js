@@ -33,38 +33,37 @@ const NavItem = ({ title, href, items = [] }) => {
       </Link>
 
       {items.length > 0 && title === "Car Brands" && (
-   <div
-  className={`absolute left-1/2 transform -translate-x-1/2 mt-[21px] w-[600px] bg-white shadow-2xl rounded-lg z-50 transition-all duration-200 ${
-    isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-  } p-4`}
->
-  <div className="grid grid-cols-4 gap-4">
-    {items.map((item, index) => (
-      <Link
-        key={index}
-        href={item.href}
-        className="block text-center hover:scale-105 transition-transform"
-      >
-        <div className="relative flex flex-col items-center group">
-          {/* Logo as-is */}
-          <div className="w-16 h-16 flex items-center justify-center rounded-full overflow-hidden transition-all duration-300 group-hover:bg-white">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-12 h-12 object-contain"
-            />
+        <div
+          className={`absolute left-1/2 transform -translate-x-1/2 mt-[21px] w-[600px] bg-white shadow-2xl rounded-lg z-50 transition-all duration-200 ${
+            isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          } p-4`}
+        >
+          <div className="grid grid-cols-4 gap-4">
+            {items.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className="block text-center hover:scale-105 transition-transform"
+              >
+                <div className="relative flex flex-col items-center group">
+                  {/* Logo as-is */}
+                  <div className="w-16 h-16 flex items-center justify-center rounded-full overflow-hidden transition-all duration-300 group-hover:bg-white">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+
+                  {/* Title hidden by default, smooth show on hover */}
+                  <p className="text-sm text-gray-700 mt-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    {item.title}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
-
-          {/* Title hidden by default, smooth show on hover */}
-          <p className="text-sm text-gray-700 mt-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-            {item.title}
-          </p>
         </div>
-      </Link>
-    ))}
-  </div>
-</div>
-
       )}
 
       {items.length > 0 && title !== "Car Brands" && (
@@ -146,118 +145,6 @@ const Navbar = () => {
     setIsOpen(!isOpen);
     document.body.style.overflow = !isOpen ? "hidden" : "auto";
   };
-
-  // const navItems = [
-  //   { title: "Home", href: "/" },
-  //   {
-  //     title: "About",
-  //     href: "/about",
-  //     items: [
-  //       { title: "Our Offers", href: "/about/story" },
-  //       { title: "MemberShips", href: "/about/team" },
-  //       { title: "Accepted DL in UAE", href: "/about/testimonials" },
-  //     ],
-  //   },
-  //   {
-  //     title: "Our Fleet",
-  //     href: "/fleet",
-  //     items: [
-  //       { title: "Luxury Car Rental", href: "/fleet/sedans" },
-  //       { title: "Sports Car Rental Dubai", href: "/fleet/suvs" },
-  //       { title: "SUV Car Rental", href: "/fleet/sports" },
-  //       { title: "Economy Car Rental", href: "/fleet/sports" },
-  //     ],
-  //   },
-  //   {
-  //     title: "Car Brands",
-  //     href: "/brands",
-  //     items: [
-  //       {
-  //         title: "BMW",
-  //         href: "/brands/bmw",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/01/Audi-car-rental-in-dubai-1-e1728645388558.webp",
-  //       },
-  //       {
-  //         title: "Audi",
-  //         href: "/brands/audi",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/Bentley-car-rental-in-dubai-e1728651358316.webp",
-  //       },
-  //       {
-  //         title: "Ferrari",
-  //         href: "/brands/ferrari",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/BMW-car-rental-in-dubai-e1728651389538.webp",
-  //       },
-  //       {
-  //         title: "Mercedes",
-  //         href: "/brands/mercedes",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/BMW-car-rental-in-dubai-e1728651389538.webp",
-  //       },
-  //       {
-  //         title: "Lamborghini",
-  //         href: "/brands/lamborghini",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/BMW-car-rental-in-dubai-e1728651389538.webp",
-  //       },
-  //       {
-  //         title: "Porsche",
-  //         href: "/brands/porsche",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/CHEVROLET-car-rental-in-dubai-e1728651451862.webp",
-  //       },
-  //       {
-  //         title: "Rolls Royce",
-  //         href: "/brands/rolls",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/BMW-car-rental-in-dubai-e1728651389538.webp",
-  //       },
-  //       {
-  //         title: "Bentley",
-  //         href: "/brands/bentley",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/Ferrari-car-rental-in-dubai-e1728651470999.webp",
-  //       },
-  //       {
-  //         title: "Nissan",
-  //         href: "/brands/nissan",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/Ferrari-car-rental-in-dubai-e1728651470999.webp",
-  //       },
-  //       {
-  //         title: "Kia",
-  //         href: "/brands/kia",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/GMC-car-rental-in-dubai-e1728651526713.webp",
-  //       },
-  //       {
-  //         title: "Toyota",
-  //         href: "/brands/toyota",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/10/hundai-e1728651545982.webp",
-  //       },
-  //       {
-  //         title: "Mazda",
-  //         href: "/brands/mazda",
-  //         image:
-  //           "https://www.bevip.ae/wp-content/uploads/2024/09/Jaguar-car-rental-in-dubai-e1728651568774.webp",
-  //       },
-  //     ],
-  //   },
-
-  //   {
-  //     title: "Our Services",
-  //     href: "/services",
-  //     items: [
-  //       { title: "Mercedes", href: "/brands/mercedes" },
-  //       { title: "BMW", href: "/brands/bmw" },
-  //       { title: "Ferrari", href: "/brands/ferrari" },
-  //     ],
-  //   },
-  //   { title: "Contact", href: "/contact" },
-  // ];
   const navItems = [
     { title: "Home", href: "/" },
     {
@@ -283,8 +170,7 @@ const Navbar = () => {
     },
     { title: "Contact", href: "/contact" },
   ];
-  
-  
+
   return (
     <header className="bg-white shadow-md">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -300,11 +186,11 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex-shrink-0 lg:mr-8 sm:mx-auto lg:mx-0">
           <Link href="/" className="flex items-center">
-            <div className="h-12 w-24 relative group">
+            <div className="h-15 w-50  relative group">
               <div className="flex items-center justify-center">
                 <img
-                  className="w-30 h-10"
-                  src="https://bevip.ae/wp-content/uploads/2022/05/VIP-LOGO-NEWupdate.webp"
+                  className="w-[300px] h-18"
+                  src="/images/logo.png"
                   alt="logo"
                 />
               </div>
